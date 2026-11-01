@@ -11,7 +11,7 @@ router = APIRouter(prefix="/readings", tags=["Sensor Readings"])
 @router.get("", response_model=List[SensorReadingRead])
 def list_readings(
     zone_id: Optional[int] = Query(None, description="Filter readings by Zone ID"),
-    timeframe: str = Query("24h", regex="^(24h|7d|30d|all)$", description="Timeframe filter: 24h, 7d, 30d, all"),
+    timeframe: str = Query("24h", pattern="^(24h|7d|30d|all)$", description="Timeframe filter: 24h, 7d, 30d, all"),
     limit: int = Query(500, ge=1, le=2000, description="Max readings to return"),
     db: Session = Depends(get_db)
 ):

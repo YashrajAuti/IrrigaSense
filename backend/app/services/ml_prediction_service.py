@@ -181,18 +181,18 @@ def predict_crop_water_requirement_ml(req: MLPredictionRequest) -> MLPredictionR
     stage_code = STAGE_MAPPING.get(req.growth_stage, 1)
     soil_code = SOIL_MAPPING.get(req.soil_type, 0)
 
-    input_vector = [[
-        crop_code,
-        stage_code,
-        soil_code,
-        req.soil_moisture_percent,
-        req.air_temp_c,
-        req.relative_humidity_percent,
-        req.solar_radiation_mj,
-        req.recent_rainfall_mm
-    ]]
+    input_df = pd.DataFrame([{
+        "crop_code": crop_code,
+        "stage_code": stage_code,
+        "soil_code": soil_code,
+        "soil_moisture": req.soil_moisture_percent,
+        "air_temp": req.air_temp_c,
+        "relative_humidity": req.relative_humidity_percent,
+        "solar_radiation": req.solar_radiation_mj,
+        "recent_rain": req.recent_rainfall_mm,
+    }])
 
-    predicted_depth = float(round(model.predict(input_vector)[0], 2))
+    predicted_depth = float(round(model.predict(input_df)[0], 2))
 
     # Calculate volumetric requirements
     efficiency_ratio = req.application_efficiency_percent / 100.0

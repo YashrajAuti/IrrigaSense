@@ -280,5 +280,14 @@ tests/test_water_calculator.py::test_invalid_efficiency_raises_error PASSED
 
 ---
 
-## 11. License
+## 11. Future Improvements & Planned Roadmap
+
+1. **Cellular / Satellite Backhaul**: Direct MQTT/CoAP integration with NB-IoT and Satellite transceivers for remote farms lacking local Wi-Fi.
+2. **Multi-Spectral Drone & Satellite Ingestion**: Integrating Sentinel-2 / Landsat NDVI imagery to ground-truth crop canopy stress alongside probe telemetry.
+3. **Multi-User RBAC**: Dedicated permission roles for Farm Owners, Agronomists, and Field Pump Operators.
+4. **Offline Mobile App**: Progressive Web App (PWA) caching for field scouting with delayed telemetry sync.
+
+---
+
+## 12. License
 Licensed under the MIT License for educational and research evaluation.
