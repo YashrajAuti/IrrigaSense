@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-jet-black: #0A0A0B;
+  --color-obsidian: #111114;
+  --color-graphite: #1B1D22;
+  --color-cerulean: #2A9DDB;
+  --color-neon-rose: #FF3B6B;
+  --color-pure-white: #F5F7FA;
+  --color-slate-gray: #8B929E;
+  --color-field-green: #49B675;
+  --color-amber-alert: #E8AD45;
+  --color-border-gray: #292C33;
+}
+
+/* Custom scrollbars matching dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #292C33;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8B929E;
+}
+
+/* Accessible focus outline */
+*:focus-visible {
+  outline: 2px solid #2A9DDB;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

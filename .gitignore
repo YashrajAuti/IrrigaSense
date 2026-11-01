@@ -1,0 +1,22 @@
+# Node / Frontend
+node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python / Backend
+__pycache__/
+*.py[cod]
+*$py.class
+backend/.venv/
+backend/.pytest_cache/
+*.db
+*.sqlite3
+
+# Environment & OS
+.env
+.DS_Store
+*.swp
+*.swo
