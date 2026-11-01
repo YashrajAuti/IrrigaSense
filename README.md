@@ -1,4 +1,25 @@
-# IrrigaSense: AI-Based Smart Irrigation & Crop Water Management Platform
+<div align="center">
+
+  <img src="assets/banner.svg" alt="IrrigaSense Animated Header Banner" width="100%" />
+
+  <br/><br/>
+
+  [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688.svg?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+  [![React](https://img.shields.io/badge/React-18.3-20232A.svg?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+  [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.5+-F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
+  [![SQLite](https://img.shields.io/badge/SQLite-3.0-003B57.svg?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org)
+  [![Tests](https://img.shields.io/badge/Pytest-26%20Passed%20(100%25)-49B675.svg?style=for-the-badge&logo=pytest&logoColor=white)](https://docs.pytest.org)
+
+  <br/><br/>
+
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=16&duration=2800&pause=1200&color=2A9DDB&center=true&vCenter=true&width=620&lines=Precision+Soil+Moisture+%26+Micro-Climate+Sensing;Supervised+Random+Forest+Crop+Water+Regression;FAO-56+Evapotranspiration+Mathematical+Derivation;Automated+Hydrological+Actuation+Interlocks" alt="Typing SVG" />
+  </a>
+
+</div>
+
+<br/>
 
 > **DEMO MODE — SIMULATED DATA**  
 > An enterprise-grade, minimalist dark-mode agricultural water management platform engineered for precision irrigation, crop water-deficit evaluation, machine learning crop water prediction, and automated decision-making without requiring physical hardware.
@@ -22,9 +43,13 @@ IrrigaSense is built to replicate software developed by a real agricultural tech
 
 ---
 
-## 2. System Architecture
+## 2. Animated Flow Architecture
 
-```
+<div align="center">
+  <img src="assets/pipeline-animated.svg" alt="IrrigaSense Animated Flow Pipeline" width="100%" />
+</div>
+
+```text
                                     +-----------------------------------------+
                                     |         IrrigaSense Web Client          |
                                     |   (React 18, TypeScript, Tailwind CSS)  |

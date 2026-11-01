@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 280" width="850" height="280">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A0B"/>
+      <stop offset="50%" stop-color="#111114"/>
+      <stop offset="100%" stop-color="#1B1D22"/>
+    </linearGradient>
+
+    <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2A9DDB" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#49B675" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1B1D22"/>
+      <stop offset="100%" stop-color="#111114"/>
+    </linearGradient>
+
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2A9DDB" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#2A9DDB" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#49B675" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- Animations -->
+    <style>
+      @keyframes pulse {
+        0%, 100% { opacity: 0.3; transform: scale(0.98); }
+        50% { opacity: 0.9; transform: scale(1.02); }
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; r: 4px; }
+        50% { opacity: 0.4; r: 3px; }
+      }
+      @keyframes waveFlow {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(-25px); }
+        100% { transform: translateX(0); }
+      }
+      @keyframes textShimmer {
+        0%, 100% { fill: #F5F7FA; }
+        50% { fill: #2A9DDB; }
+      }
+      @keyframes cardFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+      }
+      .pulsing-dot { animation: blink 2s infinite ease-in-out; }
+      .ambient-glow { animation: pulse 4s infinite ease-in-out; transform-origin: center; }
+      .wave-animation { animation: waveFlow 6s infinite ease-in-out; }
+      .brand-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 800; letter-spacing: -0.5px; }
+      .sub-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 400; }
+      .mono-text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .metric-card { animation: cardFloat 5s infinite ease-in-out; }
+      .card-1 { animation-delay: 0s; }
+      .card-2 { animation-delay: 0.8s; }
+      .card-3 { animation-delay: 1.6s; }
+      .card-4 { animation-delay: 2.4s; }
+    </style>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="850" height="280" rx="12" fill="url(#bgGrad)" stroke="#292C33" stroke-width="1.5"/>
+
+  <!-- Subtle Grid Accent -->
+  <g opacity="0.12" stroke="#8B929E" stroke-width="0.5" stroke-dasharray="3,3">
+    <line x1="40" y1="0" x2="40" y2="280"/>
+    <line x1="200" y1="0" x2="200" y2="280"/>
+    <line x1="400" y1="0" x2="400" y2="280"/>
+    <line x1="600" y1="0" x2="600" y2="280"/>
+    <line x1="800" y1="0" x2="800" y2="280"/>
+    <line x1="0" y1="60" x2="850" y2="60"/>
+    <line x1="0" y1="120" x2="850" y2="120"/>
+    <line x1="0" y1="180" x2="850" y2="180"/>
+    <line x1="0" y1="240" x2="850" y2="240"/>
+  </g>
+
+  <!-- Ambient Blue Orb Glow -->
+  <circle cx="120" cy="80" r="90" fill="#2A9DDB" opacity="0.12" filter="blur(30px)" class="ambient-glow"/>
+  <circle cx="720" cy="180" r="100" fill="#49B675" opacity="0.08" filter="blur(40px)" class="ambient-glow"/>
+
+  <!-- Brand Logo Icon (Water Drop + Circuit Node) -->
+  <g transform="translate(42, 38)">
+    <rect width="44" height="44" rx="10" fill="#111114" stroke="#2A9DDB" stroke-width="1.5"/>
+    <!-- Water Drop SVG -->
+    <path d="M22 10 C22 10 13 22 13 27 C13 32 17 35 22 35 C27 35 31 32 31 27 C31 22 22 10 22 10 Z" fill="#2A9DDB" opacity="0.85"/>
+    <circle cx="22" cy="27" r="3" fill="#F5F7FA" opacity="0.9"/>
+  </g>
+
+  <!-- Header Typography -->
+  <text x="98" y="62" fill="#F5F7FA" font-size="24" class="brand-title">Irriga<tspan fill="#2A9DDB">Sense</tspan></text>
+  <text x="98" y="78" fill="#8B929E" font-size="11.5" class="sub-text">AI-Based Smart Irrigation &amp; Precision Hydrological Management Platform</text>
+
+  <!-- Live Status Badge (Top Right) -->
+  <g transform="translate(620, 42)">
+    <rect width="188" height="26" rx="13" fill="#111114" stroke="#49B675" stroke-opacity="0.4" stroke-width="1"/>
+    <circle cx="15" cy="13" r="4" fill="#49B675" class="pulsing-dot"/>
+    <text x="26" y="17" fill="#49B675" font-size="10" font-weight="600" class="mono-text">SYSTEM ONLINE (DEMO)</text>
+  </g>
+
+  <!-- Horizontal Divider -->
+  <line x1="42" y1="102" x2="808" y2="102" stroke="#292C33" stroke-width="1"/>
+
+  <!-- Four Interactive Metric Cards -->
+  <!-- Card 1: Soil Moisture -->
+  <g transform="translate(42, 120)" class="metric-card card-1">
+    <rect width="176" height="130" rx="8" fill="url(#cardGrad)" stroke="#292C33" stroke-width="1"/>
+    <!-- Top label -->
+    <text x="14" y="26" fill="#8B929E" font-size="11" class="sub-text">Soil Moisture (VWC)</text>
+    <!-- Value -->
+    <text x="14" y="58" fill="#F5F7FA" font-size="28" font-weight="800" class="mono-text">28.4<tspan font-size="16" fill="#8B929E">%</tspan></text>
+    <!-- Status Pill -->
+    <rect x="14" y="70" width="76" height="18" rx="4" fill="#FF3B6B" fill-opacity="0.15" stroke="#FF3B6B" stroke-opacity="0.4" stroke-width="0.8"/>
+    <text x="21" y="83" fill="#FF3B6B" font-size="9.5" font-weight="700" class="mono-text">WATER DEFICIT</text>
+    <!-- Animated Wave Sparkline -->
+    <path d="M14 116 Q 30 108, 50 114 T 90 112 T 130 116 T 162 110" fill="none" stroke="#2A9DDB" stroke-width="2" class="wave-animation"/>
+  </g>
+
+  <!-- Card 2: Micro-Climate -->
+  <g transform="translate(234, 120)" class="metric-card card-2">
+    <rect width="176" height="130" rx="8" fill="url(#cardGrad)" stroke="#292C33" stroke-width="1"/>
+    <text x="14" y="26" fill="#8B929E" font-size="11" class="sub-text">Microclimate Canopy</text>
+    <text x="14" y="58" fill="#F5F7FA" font-size="28" font-weight="800" class="mono-text">29.6<tspan font-size="16" fill="#8B929E">°C</tspan></text>
+    <rect x="14" y="70" width="84" height="18" rx="4" fill="#49B675" fill-opacity="0.15" stroke="#49B675" stroke-opacity="0.4" stroke-width="0.8"/>
+    <text x="21" y="83" fill="#49B675" font-size="9.5" font-weight="700" class="mono-text">HUMIDITY: 64%</text>
+    <text x="14" y="115" fill="#8B929E" font-size="10" class="mono-text">VPD: 1.48 kPa (Balanced)</text>
+  </g>
+
+  <!-- Card 3: AI Water Demand -->
+  <g transform="translate(426, 120)" class="metric-card card-3">
+    <rect width="186" height="130" rx="8" fill="url(#cardGrad)" stroke="#292C33" stroke-width="1"/>
+    <text x="14" y="26" fill="#8B929E" font-size="11" class="sub-text">AI Water Requirement</text>
+    <text x="14" y="58" fill="#2A9DDB" font-size="28" font-weight="800" class="mono-text">18.0<tspan font-size="14" fill="#8B929E"> mm/d</tspan></text>
+    <rect x="14" y="70" width="102" height="18" rx="4" fill="#2A9DDB" fill-opacity="0.15" stroke="#2A9DDB" stroke-opacity="0.4" stroke-width="0.8"/>
+    <text x="20" y="83" fill="#2A9DDB" font-size="9.5" font-weight="700" class="mono-text">ML RANDOM FOREST</text>
+    <text x="14" y="115" fill="#8B929E" font-size="10" class="mono-text">Volume: 180,000 L / Ha</text>
+  </g>
+
+  <!-- Card 4: Water Conserved -->
+  <g transform="translate(628, 120)" class="metric-card card-4">
+    <rect width="180" height="130" rx="8" fill="url(#cardGrad)" stroke="#292C33" stroke-width="1"/>
+    <text x="14" y="26" fill="#8B929E" font-size="11" class="sub-text">Conserved Hydrology</text>
+    <text x="14" y="58" fill="#49B675" font-size="28" font-weight="800" class="mono-text">+27.5<tspan font-size="16" fill="#49B675">%</tspan></text>
+    <rect x="14" y="70" width="112" height="18" rx="4" fill="#E8AD45" fill-opacity="0.15" stroke="#E8AD45" stroke-opacity="0.4" stroke-width="0.8"/>
+    <text x="20" y="83" fill="#E8AD45" font-size="9.5" font-weight="700" class="mono-text">VS FLOOD BASELINE</text>
+    <text x="14" y="115" fill="#49B675" font-size="10" class="mono-text">42,800 L Saved This Week</text>
+  </g>
+</svg>
