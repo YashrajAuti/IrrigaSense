@@ -16,8 +16,22 @@ import {
   FAO56Request,
   FAO56Response,
 } from '../types';
+// Determine API base URL:
+// 1. In runtime environments with Vercel service bindings: process.env.BACKEND_URL
+// 2. In Vite client browser bundles: import.meta.env.VITE_API_URL
+// 3. Fallback: empty string for same-origin relative paths (/api/..., /health)
+const getApiBaseUrl = (): string => {
+  const nodeProcess = (globalThis as unknown as { process?: { env?: Record<string, string | undefined> } })?.process;
+  if (nodeProcess?.env?.BACKEND_URL) {
+    return nodeProcess.env.BACKEND_URL.replace(/\/$/, '');
+  }
+  if (typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_URL) {
+    return (import.meta.env.VITE_API_URL as string).replace(/\/$/, '');
+  }
+  return '';
+};
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+const API_BASE_URL = getApiBaseUrl();
 
 async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
   const fullUrl = url.startsWith('http') ? url : `${API_BASE_URL}${url}`;

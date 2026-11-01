@@ -158,8 +158,10 @@ def train_and_persist_model():
             "Crop Type": float(round(rf.feature_importances_[0], 3)),
         }
     }
-
-    joblib.dump(model_payload, MODEL_FILE_PATH)
+    try:
+        joblib.dump(model_payload, MODEL_FILE_PATH)
+    except Exception:
+        pass
     return model_payload
 
 def get_or_load_model():
